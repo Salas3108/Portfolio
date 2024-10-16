@@ -11,7 +11,7 @@
 .projects .projectTitle {
   text-align: center;
   color: #3e497a;
-  font-size: 2rem; /* Adjust font size for smaller screens */
+  font-size: 3.5rem; /* Adjust font size for smaller screens */
   font-weight: bold;
   margin-top: 5%;
   margin-bottom: 5%; /* Adjust margin for smaller screens */
@@ -74,7 +74,7 @@
   }
 
   .projectItem {
-    width: 100%;
+    width: 80%;
   }
 
   .projectTitle {
