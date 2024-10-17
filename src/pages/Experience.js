@@ -39,7 +39,7 @@ function Experience() {
           <p> Masters degree in Advanced Information Systems</p>
 
         </VerticalTimelineElement><VerticalTimelineElement className='vertical-timeline-element--education'
-        date='currenly'  
+        date='currently'  
         iconStyle={ {background : "#3e497a" , color : "#fff"}} 
         icon = { <SchoolIcon />}
         > 
