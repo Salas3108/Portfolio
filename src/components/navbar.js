@@ -19,7 +19,7 @@ export function Navbar() {
             </div>
             <div className="links">
                 <Link to="/"> Home</Link>
-                <Link to="/experience"> Diplômes </Link>
+                <Link to="/experience"> Education </Link>
                 <Link to="/Projects"> Projects </Link>
             </div>
         </div>
