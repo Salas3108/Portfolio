@@ -12,7 +12,7 @@ function Home() {
         <div className='about'> 
           <h2>  Hi, I am Merzouk Salas </h2>
           <div className='prompt'>  
-            <p> A MIAGE student at Unioversity of Lille - France </p>
+            <p> A MIAGE student at University of Lille - France </p>
             <Link to="https://github.com/Salas3108">
               <GitHubIcon />
             </Link>
