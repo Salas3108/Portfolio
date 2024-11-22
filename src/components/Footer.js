@@ -15,7 +15,7 @@ function Footer() {
         <Link to="https://www.linkedin.com/in/salas-merzouk-2a7217290/Salas3108">
           <LinkedInIcon />
         </Link>
-        </div> 
+      </div> 
         <p> &copy; 2023 salasMerzouk.com</p>
     </div>
   );

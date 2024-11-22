@@ -10,7 +10,7 @@ function Home() {
     <div className='home'>
       <div>
         <div className='about'> 
-          <h2>  Hi, I am Merzouk Salas </h2>
+          <h2>  Hi, I am Salas Merzouk </h2>
           <div className='prompt'>  
             <p> A MIAGE student at University of Lille - France </p>
             <Link to="https://github.com/Salas3108">
