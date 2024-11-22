@@ -18,11 +18,6 @@
     margin-bottom: 3%;
   }
 
-  @media only screen and (max-width: 600px) {
-    .about {
-      height: 80%;
-    }
-  }
   
   .about h2 {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -98,6 +93,13 @@
     .about h2 {
       font-size: 40px;
     }
+
+  @media only screen and (max-width: 600px) {
+    .about {
+      height: 80%;
+    }
+ }
+    
   
     .about .prompt {
       margin-top: 10px;
