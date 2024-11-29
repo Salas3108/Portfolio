@@ -117,7 +117,7 @@
 
     .skill-icons svg {
       font-size: 20px; /* Adjust icon size as needed */
-      margin: 0 5px;  /* Add spacing between icons */
+      margin: 5px;  /* Add spacing between icons */
       color: #3e497a; /* Color of icons */
     
   }

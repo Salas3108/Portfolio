@@ -16,7 +16,9 @@ function Home() {
             <Link to="https://github.com/Salas3108">
               <GitHubIcon />
             </Link>
-            <EmailIcon />
+            <a href="mailto:salas.merzouk54@gmail.com">
+              <EmailIcon />
+            </a>
             <Link to="https://www.linkedin.com/in/salas-merzouk-2a7217290/Salas3108">
               <LinkedInIcon />
             </Link>
