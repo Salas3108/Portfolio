@@ -11,14 +11,24 @@ function Experience() {
       <h2 className='experience-section-title'>Education</h2>
       <VerticalTimeline lineColor='#3e497a'> 
         <VerticalTimelineElement className='vertical-timeline-element--education'
-        date='2019'  
+        date='Currently'  
         iconStyle={ {background : "#3e497a" , color : "#fff"}} 
         icon = { <SchoolIcon />}
         > 
           <h3 className='vertical-timeline-element-title'>
-            Chouhada Chickoune high school -Bejaia- Algeria
+            University of Lille - France
           </h3>
-          <p> Baccaloreat in Mathematics</p>
+          <p> Preparing a Masters degree in Computer Science Project Engineering, Emerging Technologies (MIAGE)</p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement className='vertical-timeline-element--education'
+        date='2024'  
+        iconStyle={ {background : "#3e497a" , color : "#fff"}} 
+        icon = { <SchoolIcon />}
+        > 
+          <h3 className='vertical-timeline-element-title'>
+            Abderrahmane Mira University of Bejaia - Algeria
+          </h3>
+          <p> Masters degree in Advanced Information Systems</p>
         </VerticalTimelineElement>
         <VerticalTimelineElement className='vertical-timeline-element--education'
         date='2022'  
@@ -31,24 +41,14 @@ function Experience() {
           <p> College degree in Information Systems </p>
         </VerticalTimelineElement>
         <VerticalTimelineElement className='vertical-timeline-element--education'
-        date='2024'  
+        date='2019'  
         iconStyle={ {background : "#3e497a" , color : "#fff"}} 
         icon = { <SchoolIcon />}
         > 
           <h3 className='vertical-timeline-element-title'>
-            Abderrahmane Mira University of Bejaia - Algeria
+            Chouhada Chickoune high school -Bejaia- Algeria
           </h3>
-          <p> Masters degree in Advanced Information Systems</p>
-
-        </VerticalTimelineElement><VerticalTimelineElement className='vertical-timeline-element--education'
-        date='Currently'  
-        iconStyle={ {background : "#3e497a" , color : "#fff"}} 
-        icon = { <SchoolIcon />}
-        > 
-          <h3 className='vertical-timeline-element-title'>
-            University of Lille - France
-          </h3>
-          <p> Preparing a Masters degree in Computer Science Project Engineering, Emerging Technologies (MIAGE)</p>
+          <p> Baccaloreat in Mathematics</p>
         </VerticalTimelineElement>
       </VerticalTimeline>
     </div>

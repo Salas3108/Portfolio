@@ -109,11 +109,6 @@ function Home() {
           </div>
           <div className='service-card'>
             <div className='service-icon'>05</div>
-            <h3>Technical Consulting</h3>
-            <p>Strategic guidance on technology selection and system design. I help organizations make informed decisions that align with their business goals.</p>
-          </div>
-          <div className='service-card'>
-            <div className='service-icon'>06</div>
             <h3>Performance Optimization</h3>
             <p>Database tuning, code optimization, and system performance. I identify bottlenecks and implement solutions that improve speed and reliability.</p>
           </div>
