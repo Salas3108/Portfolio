@@ -6,6 +6,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background: linear-gradient(135deg, #f5f7fa 0%, #f0f4f8 100%);
+  padding: 40px 0;
 }
 
 .projects .projectTitle {
@@ -15,6 +17,7 @@
   font-weight: bold;
   margin-top: 5%;
   margin-bottom: 5%; /* Adjust margin for smaller screens */
+  letter-spacing: -0.5px;
 }
 
 .projectList {
@@ -22,50 +25,80 @@
   max-width: 1200px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(35%, 1fr)); /* Use auto-fit for responsiveness */
-  gap: 20px; /* Adjust gap for smaller screens */
+  gap: 30px; /* Adjust gap for smaller screens */
 }
 
 .projectItem {
-  border-radius: 15px;
+  border-radius: 12px;
   background-color: white;
-  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
-  padding: 20px; /* Adjust padding for smaller screens */
+  box-shadow: 0px 2px 8px rgba(62, 73, 122, 0.08);
+  padding: 0;
+  overflow: hidden;
   text-align: center;
   /* Make project items the same height */
   display: flex; /* Use flexbox to achieve equal height */
   flex-direction: column;
-  height: 400px; /* Adjust height for smaller screens */
-  
+  height: 450px;
+  transition: all 0.3s ease;
 }
 
 .projectItem:hover {
-  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 8px 20px rgba(62, 73, 122, 0.15);
+  transform: translateY(-5px);
   transition: 0.3s ease-in;
-  cursor: pointer;
 }
 
 .bgImage {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
   width: 100%;
-  height: 200px; /* Adjust height for smaller screens */
+  height: 220px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-bottom: 15px; /* Adjust margin for smaller screens */
   flex-shrink: 0; /* Prevent image from shrinking */
 }
 
 .projectItem h1 {
-  font-size: 1.5rem; /* Adjust font size for smaller screens */
-  margin-bottom: 10px; /* Adjust margin for smaller screens */
+  font-size: 1.4rem;
+  margin: 15px 15px 0 15px;
+  color: #3e497a;
+  font-weight: 600;
 }
 
 .project-description {
-  font-size: 0.9rem; /* Adjust font size for smaller screens */
-  color: #555;
+  font-size: 0.9rem;
+  color: #666;
   line-height: 1.5;
-  flex-grow: 1; /* Allow description to take up remaining space */
+  flex-grow: 1;
+  margin: 10px 15px;
+  padding: 0;
+}
+
+.github-links {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  padding: 15px;
+  border-top: 1px solid #f0f0f0;
+  flex-wrap: wrap;
+}
+
+.github-link {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #3e497a;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 1px solid #3e497a;
+}
+
+.github-link:hover {
+  background-color: #2f3a5a;
+  border-color: #2f3a5a;
+  transform: scale(1.05);
 }
 
 /* Media Queries for Responsiveness */
@@ -80,5 +113,13 @@
 
   .projectTitle {
     font-size: 1.8rem; /* Further adjustment for very small screens */
+  }
+
+  .projectItem {
+    height: auto;
+  }
+
+  .bgImage {
+    height: 180px;
   }
 }
