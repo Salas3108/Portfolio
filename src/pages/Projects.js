@@ -5,8 +5,10 @@ import Proj7 from "../assets/proj7.PNG";
 import Proj4 from "../assets/proj4.webp";
 import Proj5 from "../assets/proj5.webp";
 import Proj6 from "../assets/proj6.jpg";
+import CiblOrgaSport from "../assets/ciblorgasport.png";
+import GestionRestauration from "../assets/gestion-restauration.png";
+import MessagerieMS from "../assets/messagerie-microservice.png";
 import  "../styles/Projects.css";
-import { Link } from 'react-router-dom';
 
 
 function Projects() {
@@ -14,37 +16,57 @@ function Projects() {
     <div className='projects'>
       <h1 className='projectTitle'>  My Personal Projects </h1>
       <div className='projectList'>
-        <Link to="https://github.com/Salas3108">
-          <ProjectItem 
-            name="Portfolio" 
-            image={Proj7} 
-            description="This portfolio is a reflection of my journey as a web developer, showcasing my passion for crafting interactive and user-friendly websites. I built it entirely with React, taking advantage of its component-based architecture and dynamic nature." 
-          />
-        </Link>
+        <ProjectItem 
+          name="Portfolio" 
+          image={Proj7} 
+          description="This portfolio is a reflection of my journey as a web developer, showcasing my passion for crafting interactive and user-friendly websites. I built it entirely with React, taking advantage of its component-based architecture and dynamic nature."
+          githubLinks={[{ url: "https://github.com/Salas3108", label: "GitHub Profile" }]}
+        />
 
-        <Link to="https://github.com/Salas3108/SIAD.git">
-          <ProjectItem 
-            name="Online Car Shop with AI Price Prediction" 
-            image={Proj4}
-            description="An e-commerce platform for car sales featuring an AI model to predict car prices. Made using Mern Stack and FastAPI." 
-          />
-        </Link>
+        <ProjectItem 
+          name="CiblOrgaSport - Sports Management Platform" 
+          image={CiblOrgaSport}
+          description="A comprehensive sports organization platform for managing teams, schedules, and championships. Built with a modern tech stack featuring separate frontend and backend repositories for scalability."
+          githubLinks={[
+            { url: "https://github.com/Salas3108/CiblOrgaSport_Front", label: "Frontend" },
+            { url: "https://github.com/Salas3108/CiblOrgaSport_Back", label: "Backend" }
+          ]}
+        />
+
+        <ProjectItem 
+          name="Online Car Shop with AI Price Prediction" 
+          image={Proj4}
+          description="An e-commerce platform for car sales featuring an AI model to predict car prices. Made using Mern Stack and FastAPI." 
+          githubLinks={[{ url: "https://github.com/Salas3108/SIAD.git", label: "GitHub" }]}
+        />
         
-        <Link to="https://colab.research.google.com/drive/1xrwNVgHymYM7kyxmtKWnaXsV3wQvM8Zm#scrollTo=8Enlro4tDRW8">
-          <ProjectItem 
-            name="Collaborative Filtering Recommender System" 
-            image={Proj5}
-            description="A recommender system that uses collaborative filtering to suggest items based on user similarity." 
-          />
-        </Link>
+        <ProjectItem 
+          name="Collaborative Filtering Recommender System" 
+          image={Proj5}
+          description="A recommender system that uses collaborative filtering to suggest items based on user similarity." 
+          githubLinks={[{ url: "https://colab.research.google.com/drive/1xrwNVgHymYM7kyxmtKWnaXsV3wQvM8Zm#scrollTo=8Enlro4tDRW8", label: "Colab" }]}
+        />
 
-        <Link to="https://github.com/Salas3108/Hybrid-Recommendation.git">
-          <ProjectItem 
-            name="Hybrid Recommender System" 
-            image={Proj6}
-            description="A recommender system that combines content-based and collaborative filtering techniques for more accurate recommendations." 
-          />
-        </Link>
+        <ProjectItem 
+          name="Hybrid Recommender System" 
+          image={Proj6}
+          description="A recommender system that combines content-based and collaborative filtering techniques for more accurate recommendations." 
+          githubLinks={[{ url: "https://github.com/Salas3108/Hybrid-Recommendation.git", label: "GitHub" }]}
+        />
+
+        <ProjectItem 
+          name="Restaurant Management System" 
+          image={GestionRestauration}
+          description="A complete restaurant management solution for handling reservations, menus, orders, and customer management. Designed for modern restaurant operations."
+          githubLinks={[{ url: "https://github.com/ElsaLogier/projet-PAI.git", label: "GitHub" }]}
+        />
+
+        <ProjectItem 
+          name="Microservices Messaging Platform" 
+          image={MessagerieMS}
+          description="A scalable messaging system built with microservices architecture. Enables real-time communication with multiple channels and professional-grade reliability."
+          githubLinks={[{ url: "https://github.com/Salas3108/Projet_Alom", label: "GitHub" }]}
+        />
 
       </div>
     </div>
