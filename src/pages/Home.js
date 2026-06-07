@@ -1,115 +1,211 @@
 import React from 'react'
-import EmailIcon from '@mui/icons-material/Email';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import { Link } from 'react-router-dom';
 import "../styles/home.css";
 
 function Home() {
+  const featuredProjects = [
+    {
+      title: "CiblOrgaSport",
+      description: "Sports organization platform with team management and championship scheduling",
+      tags: ["React", "Node.js", "MongoDB"],
+      links: [
+        { label: "Frontend", url: "https://github.com/Salas3108/CiblOrgaSport_Front" },
+        { label: "Backend", url: "https://github.com/Salas3108/CiblOrgaSport_Back" }
+      ]
+    },
+    {
+      title: "Restaurant Management System",
+      description: "Complete solution for handling reservations, menus, and customer orders",
+      tags: ["Full Stack", "Database", "API"],
+      links: [{ label: "GitHub", url: "https://github.com/ElsaLogier/projet-PAI.git" }]
+    },
+    {
+      title: "Microservices Messaging",
+      description: "Scalable real-time messaging platform built with microservices architecture",
+      tags: ["Microservices", "API", "Node.js"],
+      links: [{ label: "GitHub", url: "https://github.com/Salas3108/Projet_Alom" }]
+    }
+  ];
+
   return (
     <div className='home'>
-      <div className='hero'>
+      {/* Hero Section */}
+      <section className='hero'>
         <div className='hero-content'>
-          <h1>Salas Merzouk</h1>
-          <p className='subtitle'>Full Stack Developer & MIAGE Student</p>
-          <p className='description'>
-            I build web applications and intelligent systems with a focus on scalability and user experience.
-            Currently exploring AI solutions and modern software architecture at University of Lille.
-          </p>
-          
-          <div className='social-buttons'>
-            <a href="https://github.com/Salas3108" target="_blank" rel="noopener noreferrer" className='btn btn-primary'>
-              <GitHubIcon /> GitHub
-            </a>
-            <a href="mailto:salas.merzouk54@gmail.com" className='btn btn-primary'>
-              <EmailIcon /> Email
-            </a>
-            <a href="https://www.linkedin.com/in/salas-merzouk-2a7217290/" target="_blank" rel="noopener noreferrer" className='btn btn-primary'>
-              <LinkedInIcon /> LinkedIn
-            </a>
+          <div className='hero-text'>
+            <h1 className='hero-title'>
+              Hi, I&apos;m <span className='highlight'>Salas Merzouk</span>
+            </h1>
+            <p className='hero-subtitle'>
+              Full Stack Developer & MIAGE Student
+            </p>
+            <p className='hero-description'>
+              I build scalable web applications and intelligent systems. Passionate about modern architecture, 
+              AI solutions, and creating exceptional digital experiences.
+            </p>
+            <div className='cta-buttons'>
+              <a href="mailto:salas.merzouk54@gmail.com" className='btn btn-primary'>
+                Get In Touch
+                <ArrowRightIcon />
+              </a>
+              <Link to="/projects" className='btn btn-secondary'>
+                View My Work
+              </Link>
+            </div>
+          </div>
+          <div className='hero-visual'>
+            <div className='gradient-blob blob-1'></div>
+            <div className='gradient-blob blob-2'></div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className='about'>
-        <h2>About</h2>
-        <p>
-          I'm a passionate full-stack developer with a strong foundation in both frontend and backend technologies. 
-          My journey in software development has equipped me with expertise in building scalable web applications, 
-          implementing machine learning solutions, and architecting complex systems.
-        </p>
-        <p>
-          When I'm not coding, I'm exploring new technologies, contributing to open-source projects, or diving deeper 
-          into AI and data science. I believe in continuous learning and staying updated with the latest industry trends.
-        </p>
-      </div>
+      {/* Featured Projects Section */}
+      <section className='featured'>
+        <div className='section-header'>
+          <h2>Featured Projects</h2>
+          <p>A selection of my most impactful work</p>
+        </div>
+        <div className='projects-grid'>
+          {featuredProjects.map((project, index) => (
+            <div key={index} className='project-card'>
+              <div className='card-header'>
+                <h3>{project.title}</h3>
+                <div className='card-number'>{String(index + 1).padStart(2, '0')}</div>
+              </div>
+              <p className='card-description'>{project.description}</p>
+              <div className='card-tags'>
+                {project.tags.map((tag, i) => (
+                  <span key={i} className='tag'>{tag}</span>
+                ))}
+              </div>
+              <div className='card-links'>
+                {project.links.map((link, i) => (
+                  <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className='link-btn'>
+                    {link.label}
+                    <ArrowRightIcon />
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className='view-more'>
+          <Link to="/projects" className='link-with-arrow'>
+            View all projects <ArrowRightIcon />
+          </Link>
+        </div>
+      </section>
 
-      <div className='skills'>
-        <h2>Skills & Technologies</h2>
-        <div className='skill-columns'>
-          <div className='skill-column'>
-            <h3>Languages</h3>
-            <ul>
-              <li>Python</li>
-              <li>Java</li>
-              <li>JavaScript</li>
-              <li>C</li>
-              <li>PHP</li>
-            </ul>
+      {/* Skills Section */}
+      <section className='skills-section'>
+        <div className='section-header'>
+          <h2>Skills & Expertise</h2>
+          <p>Technologies and tools I work with</p>
+        </div>
+        <div className='skills-grid'>
+          <div className='skill-group'>
+            <h4>Languages</h4>
+            <div className='skill-list'>
+              <span>Python</span>
+              <span>Java</span>
+              <span>JavaScript</span>
+              <span>C</span>
+              <span>PHP</span>
+            </div>
           </div>
-
-          <div className='skill-column'>
-            <h3>Frontend</h3>
-            <ul>
-              <li>React</li>
-              <li>HTML & CSS</li>
-              <li>Tailwind CSS</li>
-              <li>Material-UI</li>
-            </ul>
+          <div className='skill-group'>
+            <h4>Frontend</h4>
+            <div className='skill-list'>
+              <span>React</span>
+              <span>HTML & CSS</span>
+              <span>Tailwind</span>
+              <span>Material-UI</span>
+            </div>
           </div>
-
-          <div className='skill-column'>
-            <h3>Backend</h3>
-            <ul>
-              <li>Node.js</li>
-              <li>Express</li>
-              <li>FastAPI</li>
-              <li>Spring Boot</li>
-            </ul>
+          <div className='skill-group'>
+            <h4>Backend</h4>
+            <div className='skill-list'>
+              <span>Node.js</span>
+              <span>Express</span>
+              <span>FastAPI</span>
+              <span>Spring Boot</span>
+            </div>
           </div>
-
-          <div className='skill-column'>
-            <h3>Databases & Tools</h3>
-            <ul>
-              <li>PostgreSQL</li>
-              <li>MongoDB</li>
-              <li>Firebase</li>
-              <li>Git & GitHub</li>
-            </ul>
+          <div className='skill-group'>
+            <h4>Databases</h4>
+            <div className='skill-list'>
+              <span>PostgreSQL</span>
+              <span>MongoDB</span>
+              <span>Firebase</span>
+              <span>Oracle</span>
+            </div>
           </div>
-
-          <div className='skill-column'>
-            <h3>AI & ML</h3>
-            <ul>
-              <li>scikit-learn</li>
-              <li>Machine Learning</li>
-              <li>Data Analysis</li>
-              <li>Recommendation Systems</li>
-            </ul>
+          <div className='skill-group'>
+            <h4>AI & ML</h4>
+            <div className='skill-list'>
+              <span>scikit-learn</span>
+              <span>Machine Learning</span>
+              <span>Data Analysis</span>
+              <span>Recommendations</span>
+            </div>
           </div>
-
-          <div className='skill-column'>
-            <h3>Other Skills</h3>
-            <ul>
-              <li>Microservices</li>
-              <li>REST APIs</li>
-              <li>Agile Methodology</li>
-              <li>System Design</li>
-            </ul>
+          <div className='skill-group'>
+            <h4>Tools & Other</h4>
+            <div className='skill-list'>
+              <span>Microservices</span>
+              <span>REST APIs</span>
+              <span>Git</span>
+              <span>Agile</span>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* About Section */}
+      <section className='about-section'>
+        <div className='about-content'>
+          <div className='about-text'>
+            <h2>About Me</h2>
+            <p>
+              I&apos;m a passionate developer with a strong foundation in full-stack development. 
+              My journey has equipped me with expertise in building scalable applications, 
+              implementing ML solutions, and architecting complex systems.
+            </p>
+            <p>
+              Currently pursuing a Master&apos;s degree in Computer Science at University of Lille, 
+              I combine academic knowledge with practical industry experience from internships at 
+              AXA France and CTIB. I&apos;m always exploring new technologies and pushing the boundaries 
+              of what&apos;s possible.
+            </p>
+            <div className='about-stats'>
+              <div className='stat'>
+                <div className='stat-number'>7+</div>
+                <p>Projects</p>
+              </div>
+              <div className='stat'>
+                <div className='stat-number'>2</div>
+                <p>Internships</p>
+              </div>
+              <div className='stat'>
+                <div className='stat-number'>4</div>
+                <p>Years Learning</p>
+              </div>
+            </div>
+          </div>
+          <Link to="/experience" className='about-cta'>
+            <div className='cta-card'>
+              <h3>My Journey</h3>
+              <p>Education & Experience</p>
+              <ArrowRightIcon />
+            </div>
+          </Link>
+        </div>
+      </section>
     </div>
   )
 }
 
 export default Home
+
