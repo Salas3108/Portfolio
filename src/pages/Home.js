@@ -7,6 +7,7 @@ function Home() {
   const projects = [
     {
       title: "CiblOrgaSport",
+      image: "/projects/ciblorgasport.png",
       description: "Complete sports management platform with team coordination, championship scheduling, and real-time updates. Built with React and Node.js for seamless user experience.",
       tags: ["React", "Node.js", "MongoDB"],
       links: [
@@ -16,12 +17,14 @@ function Home() {
     },
     {
       title: "Restaurant Management System",
+      image: "/projects/restaurant.png",
       description: "End-to-end solution for restaurant operations including reservations, menu management, and customer order handling. Designed for scalability and ease of use.",
       tags: ["Full Stack", "Database", "API"],
       links: [{ label: "GitHub", url: "https://github.com/ElsaLogier/projet-PAI.git" }]
     },
     {
       title: "Microservices Messaging",
+      image: "/projects/microservices.png",
       description: "Scalable real-time messaging platform leveraging microservices architecture. Enables reliable communication with message queuing and event-driven design.",
       tags: ["Microservices", "API", "Node.js"],
       links: [{ label: "GitHub", url: "https://github.com/Salas3108/Projet_Alom" }]
@@ -124,6 +127,11 @@ function Home() {
         <div className='projects-grid'>
           {projects.map((project, index) => (
             <div key={index} className='project-card'>
+              {project.image && (
+                <div className='project-image'>
+                  <img src={project.image} alt={project.title} />
+                </div>
+              )}
               <div className='card-header'>
                 <h3>{project.title}</h3>
                 <div className='card-number'>{String(index + 1).padStart(2, '0')}</div>
