@@ -5,12 +5,34 @@
   box-shadow: 0 4px 20px rgba(62, 73, 122, 0.15);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0 40px;
   position: sticky;
   top: 0;
   z-index: 100;
   transition: all 0.3s ease;
+  gap: 40px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.profile-pic:hover {
+  border-color: white;
+  transform: scale(1.05);
 }
 
 .links {
@@ -57,12 +79,38 @@
   width: 70%;
 }
 
+.cv-link {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  padding: 8px 16px !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cv-link:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: white;
+}
+
+.cv-link::after {
+  display: none;
+}
+
+.cv-link svg {
+  font-size: 18px;
+}
+
 .toggleButton {
   width: auto;
   height: 100%;
   display: none;
   align-items: center;
   justify-content: flex-end;
+  position: absolute;
+  right: 20px;
 }
 
 .toggleButton svg {
@@ -83,10 +131,17 @@
 }
 
 #open {
-  height: auto;
+  justify-content: flex-start;
   flex-direction: column;
   align-items: flex-start;
   padding: 0;
+  height: auto;
+}
+
+#open .logo {
+  padding: 15px 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
 }
 
 #open .links {
@@ -120,11 +175,17 @@
 @media only screen and (max-width: 900px) {
   .navbar {
     padding: 0 30px;
+    gap: 30px;
   }
 
   .navbar a {
     padding: 0 20px;
     font-size: 0.95rem;
+  }
+
+  .profile-pic {
+    width: 45px;
+    height: 45px;
   }
 }
 
@@ -132,7 +193,12 @@
   .navbar {
     height: 70px;
     padding: 0 20px;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 20px;
+  }
+
+  .logo {
+    margin-right: auto;
   }
 
   .toggleButton {
@@ -147,8 +213,22 @@
     display: none;
   }
 
+  #open {
+    height: auto;
+  }
+
   #open .links {
     display: flex;
+  }
+
+  .profile-pic {
+    width: 40px;
+    height: 40px;
+  }
+
+  .cv-link {
+    padding: 10px 14px !important;
+    font-size: 0.9rem;
   }
 }
 
@@ -165,6 +245,14 @@
     height: 80px;
     flex-direction: row;
     padding: 0 40px;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  #open .logo {
+    padding: 0;
+    border-bottom: none;
+    width: auto;
   }
 
   #open .links {

@@ -106,31 +106,25 @@ function Home() {
         </div>
         <div className='skills-grid'>
           <div className='skill-group'>
-            <h4>Languages</h4>
+            <h4>Backend</h4>
             <div className='skill-list'>
-              <span>Python</span>
               <span>Java</span>
-              <span>JavaScript</span>
-              <span>C</span>
-              <span>PHP</span>
+              <span>Spring Boot</span>
+              <span>Node.js</span>
+              <span>Express</span>
+              <span>FastAPI</span>
+              <span>Apache Kafka</span>
             </div>
           </div>
           <div className='skill-group'>
             <h4>Frontend</h4>
             <div className='skill-list'>
               <span>React</span>
+              <span>Next.js</span>
+              <span>Angular</span>
+              <span>TypeScript</span>
               <span>HTML & CSS</span>
-              <span>Tailwind</span>
-              <span>Material-UI</span>
-            </div>
-          </div>
-          <div className='skill-group'>
-            <h4>Backend</h4>
-            <div className='skill-list'>
-              <span>Node.js</span>
-              <span>Express</span>
-              <span>FastAPI</span>
-              <span>Spring Boot</span>
+              <span>Tailwind & Material-UI</span>
             </div>
           </div>
           <div className='skill-group'>
@@ -143,21 +137,36 @@ function Home() {
             </div>
           </div>
           <div className='skill-group'>
-            <h4>AI & ML</h4>
+            <h4>DevOps & CI/CD</h4>
             <div className='skill-list'>
-              <span>scikit-learn</span>
-              <span>Machine Learning</span>
-              <span>Data Analysis</span>
-              <span>Recommendations</span>
+              <span>Docker</span>
+              <span>Kubernetes</span>
+              <span>GitHub Actions</span>
+              <span>Grafana</span>
+              <span>Git</span>
+              <span>Azure DevOps</span>
             </div>
           </div>
           <div className='skill-group'>
-            <h4>Tools & Other</h4>
+            <h4>Data & AI/ML</h4>
             <div className='skill-list'>
-              <span>Microservices</span>
+              <span>Python</span>
+              <span>Pandas</span>
+              <span>scikit-learn</span>
+              <span>Power BI</span>
+              <span>Data Analysis</span>
+              <span>Machine Learning</span>
+            </div>
+          </div>
+          <div className='skill-group'>
+            <h4>Other Skills</h4>
+            <div className='skill-list'>
+              <span>Microservices Architecture</span>
               <span>REST APIs</span>
-              <span>Git</span>
-              <span>Agile</span>
+              <span>SOLID Principles</span>
+              <span>Clean Architecture</span>
+              <span>Agile (Scrum/Jira)</span>
+              <span>System Design</span>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {Link , useLocation} from "react-router-dom";
 import ReorderIcon from '@mui/icons-material/Reorder';
+import GetAppIcon from '@mui/icons-material/GetApp';
 
 
 export function Navbar() {
@@ -12,6 +13,9 @@ export function Navbar() {
 
     return(
         <div className="navbar"  id= {expandNavbar ? "open" : "close"} >
+            <div className="logo">
+                <img src="/assets/profile.jpg" alt="Salas Merzouk" className="profile-pic" />
+            </div>
             <div className="toggleButton"> 
                 <button onClick={ () => { setExpandNavbar((prev) => !prev )} }> 
                     <ReorderIcon />  
@@ -21,6 +25,9 @@ export function Navbar() {
                 <Link to="/"> Home</Link>
                 <Link to="/experience"> Education </Link>
                 <Link to="/Projects"> Projects </Link>
+                <a href="/cv.pdf" className="cv-link" download>
+                    <GetAppIcon /> CV
+                </a>
             </div>
         </div>
     )
