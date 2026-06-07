@@ -14,7 +14,7 @@ export function Navbar() {
     return(
         <div className="navbar"  id= {expandNavbar ? "open" : "close"} >
             <div className="logo">
-                <img src="/assets/profile.jpg" alt="Salas Merzouk" className="profile-pic" />
+                <Link to="/" className="logo-text">Salas Merzouk</Link>
             </div>
             <div className="toggleButton"> 
                 <button onClick={ () => { setExpandNavbar((prev) => !prev )} }> 
@@ -24,6 +24,7 @@ export function Navbar() {
             <div className="links">
                 <Link to="/"> Home</Link>
                 <Link to="/experience"> Education </Link>
+                <Link to="/professional"> Experience </Link>
                 <Link to="/Projects"> Projects </Link>
                 <a href="/cv.pdf" className="cv-link" download>
                     <GetAppIcon /> CV

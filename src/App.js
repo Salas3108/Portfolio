@@ -5,6 +5,7 @@ import Navbar from "./components/navbar";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Experience from "./pages/Experience";
+import Professional from "./pages/Professional";
 import "../src/styles/Navbar.css";
 import Footer from './components/Footer';
 import "../src/styles/Footer.css";
@@ -19,6 +20,7 @@ function App() {
           <Route path = "/" element = {<Home/>} />
           <Route path = "/projects" element = {<Projects/>} />
           <Route path = "/experience" element = {<Experience/>} />
+          <Route path = "/professional" element = {<Professional/>} />
         </Routes>
         <Footer /> 
       </Router>
@@ -27,3 +29,4 @@ function App() {
 }
 
 export default App
+
