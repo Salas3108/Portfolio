@@ -1,0 +1,95 @@
+/* Experience.css */
+.experience {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(135deg, #f5f7fa 0%, #f0f4f8 100%);
+  padding: 40px 20px;
+}
+
+.experience-section-title {
+  text-align: center;
+  color: #3e497a;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  letter-spacing: -0.5px;
+}
+
+.vertical-timeline {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.vertical-timeline-element--work {
+  padding: 20px;
+}
+
+.vertical-timeline-element--education {
+  padding: 20px;
+}
+
+.vertical-timeline-element-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #3e497a;
+  margin-bottom: 5px;
+}
+
+.vertical-timeline-element-subtitle {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.vertical-timeline--children > .vertical-timeline-element > .vertical-timeline-element-content {
+  background: white;
+  box-shadow: 0px 2px 8px rgba(62, 73, 122, 0.08);
+  border-radius: 8px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.vertical-timeline--children > .vertical-timeline-element > .vertical-timeline-element-content:hover {
+  box-shadow: 0px 8px 20px rgba(62, 73, 122, 0.15);
+  transform: translateX(5px);
+}
+
+.vertical-timeline--children > .vertical-timeline-element > .vertical-timeline-element-content::before {
+  border-right: 15px solid white;
+}
+
+.vertical-timeline-element-content p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 800px) {
+  .experience-section-title {
+    font-size: 1.8rem;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  .vertical-timeline {
+    width: 95%;
+  }
+
+  .vertical-timeline-element-title {
+    font-size: 1.1rem;
+  }
+
+  .vertical-timeline--children > .vertical-timeline-element > .vertical-timeline-element-content {
+    padding: 15px;
+  }
+}
