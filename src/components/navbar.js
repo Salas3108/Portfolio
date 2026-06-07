@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import {Link , useLocation} from "react-router-dom";
 import ReorderIcon from '@mui/icons-material/Reorder';
+import CloseIcon from '@mui/icons-material/Close';
 import GetAppIcon from '@mui/icons-material/GetApp';
 
 
@@ -13,12 +14,9 @@ export function Navbar() {
 
     return(
         <div className="navbar"  id= {expandNavbar ? "open" : "close"} >
-            <div className="logo">
-                <Link to="/" className="logo-text">Salas Merzouk</Link>
-            </div>
             <div className="toggleButton"> 
                 <button onClick={ () => { setExpandNavbar((prev) => !prev )} }> 
-                    <ReorderIcon />  
+                    {expandNavbar ? <CloseIcon /> : <ReorderIcon />}
                 </button>
             </div>
             <div className="links">
@@ -35,3 +33,4 @@ export function Navbar() {
 }
 
 export default Navbar;
+

@@ -11,26 +11,6 @@
   top: 0;
   z-index: 100;
   transition: all 0.3s ease;
-  gap: 40px;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  height: 100%;
-}
-
-.logo-text {
-  color: white;
-  text-decoration: none;
-  font-size: 1.3rem;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  transition: all 0.3s ease;
-}
-
-.logo-text:hover {
-  opacity: 0.8;
 }
 
 .links {
@@ -106,7 +86,7 @@
   height: 100%;
   display: none;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   position: absolute;
   right: 20px;
 }
@@ -122,6 +102,9 @@
   cursor: pointer;
   padding: 0;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .toggleButton button:hover {
@@ -129,17 +112,11 @@
 }
 
 #open {
-  justify-content: flex-start;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   padding: 0;
   height: auto;
-}
-
-#open .logo {
-  padding: 15px 40px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  width: 100%;
+  justify-content: flex-start;
 }
 
 #open .links {
@@ -149,6 +126,7 @@
   background: linear-gradient(135deg, #2f3a5a 0%, #21325e 100%);
   padding: 20px 0;
   gap: 0;
+  height: auto;
 }
 
 #open a {
@@ -170,43 +148,74 @@
 }
 
 /* ==================== RESPONSIVE DESIGN ==================== */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 1024px) {
   .navbar {
     padding: 0 30px;
-    gap: 30px;
   }
 
   .navbar a {
-    padding: 0 20px;
+    padding: 0 18px;
     font-size: 0.95rem;
+  }
+
+  .cv-link {
+    padding: 8px 14px !important;
+    font-size: 0.9rem;
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .navbar {
     height: 70px;
     padding: 0 20px;
-    justify-content: flex-start;
-    gap: 20px;
   }
 
-  .logo {
-    margin-right: auto;
+  .navbar a {
+    padding: 0 15px;
+    font-size: 0.9rem;
   }
 
-  .logo-text {
-    font-size: 1.1rem;
+  .cv-link {
+    padding: 7px 12px !important;
+    font-size: 0.85rem;
   }
 
   .toggleButton {
     display: flex;
   }
 
-  #close a {
+  #close .links {
     display: none;
   }
 
-  .links {
+  #open {
+    height: auto;
+  }
+
+  #open .links {
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    height: 70px;
+    padding: 0 15px;
+  }
+
+  .toggleButton {
+    display: flex;
+  }
+
+  .toggleButton svg {
+    font-size: 28px;
+  }
+
+  .toggleButton button {
+    padding: 0;
+  }
+
+  #close .links {
     display: none;
   }
 
@@ -218,18 +227,63 @@
     display: flex;
   }
 
+  .navbar a {
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  #open a {
+    width: 100%;
+    text-align: left;
+    padding: 12px 30px;
+  }
+
+  #open a:hover {
+    padding-left: 40px;
+  }
+
   .cv-link {
-    padding: 10px 14px !important;
+    padding: 10px 15px !important;
     font-size: 0.9rem;
+  }
+
+  .cv-link svg {
+    font-size: 16px;
   }
 }
 
-@media only screen and (min-width: 600px) {
-  .toggleButton {
-    display: none;
+@media only screen and (max-width: 480px) {
+  .navbar {
+    height: 65px;
+    padding: 0 12px;
   }
 
-  .hiddenLinks {
+  .toggleButton svg {
+    font-size: 26px;
+  }
+
+  .navbar a {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  #open a {
+    padding: 10px 20px;
+  }
+
+  .cv-link {
+    padding: 8px 12px !important;
+    font-size: 0.8rem;
+  }
+
+  .cv-link svg {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .toggleButton {
     display: none;
   }
 
@@ -238,13 +292,6 @@
     flex-direction: row;
     padding: 0 40px;
     justify-content: center;
-    gap: 40px;
-  }
-
-  #open .logo {
-    padding: 0;
-    border-bottom: none;
-    width: auto;
   }
 
   #open .links {
