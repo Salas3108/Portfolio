@@ -8,6 +8,9 @@ import Proj4 from "../assets/proj4.webp";
 import Proj5 from "../assets/proj5.webp";
 import Proj6 from "../assets/proj6.jpg";
 import  "../styles/Projects.css";
+import CiblOrgaSport from "../assets/ciblorgasport.png";
+import GestionRestauration from "../assets/gestion-restauration.png";
+import MessagerieMS from "../assets/messagerie-microservice.png";
 
 
 function Projects() {
