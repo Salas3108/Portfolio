@@ -7,9 +7,6 @@ import Proj7 from "../assets/proj7.PNG";
 import Proj4 from "../assets/proj4.webp";
 import Proj5 from "../assets/proj5.webp";
 import Proj6 from "../assets/proj6.jpg";
-import CiblOrgaSport from "../assets/ciblorgasport.png";
-import GestionRestauration from "../assets/gestion-restauration.png";
-import MessagerieMS from "../assets/messagerie-microservice.png";
 import  "../styles/Projects.css";
 
 
