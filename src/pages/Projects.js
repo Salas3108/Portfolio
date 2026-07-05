@@ -8,9 +8,6 @@ import Proj4 from "../assets/proj4.webp";
 import Proj5 from "../assets/proj5.webp";
 import Proj6 from "../assets/proj6.jpg";
 import  "../styles/Projects.css";
-import CiblOrgaSport from "../assets/ciblorgasport.png";
-import GestionRestauration from "../assets/gestion-restauration.png";
-import MessagerieMS from "../assets/messagerie-microservice.png";
 
 
 function Projects() {
@@ -30,7 +27,7 @@ function Projects() {
 
         <ProjectItem 
           name={t('projects.ciblorgasport.name')} 
-          image={CiblOrgaSport}
+          image="/projects/ciblorgasport.png"
           description={t('projects.ciblorgasport.desc')}
           githubLinks={[
             { url: "https://github.com/Salas3108/CiblOrgaSport_Front", label: t('project.link.frontend') },
@@ -61,14 +58,14 @@ function Projects() {
 
         <ProjectItem 
           name={t('projects.restaurant.name')} 
-          image={GestionRestauration}
+          image="/projects/restaurant.png"
           description={t('projects.restaurant.desc')}
           githubLinks={[{ url: "https://github.com/ElsaLogier/projet-PAI.git", label: t('project.link.github') }]}
         />
 
         <ProjectItem 
           name={t('projects.messaging.name')} 
-          image={MessagerieMS}
+          image="/projects/microservices.png"
           description={t('projects.messaging.desc')}
           githubLinks={[{ url: "https://github.com/Salas3108/Projet_Alom", label: t('project.link.github') }]}
         />

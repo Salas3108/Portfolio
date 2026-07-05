@@ -52,7 +52,7 @@ const en = {
 
   // Featured projects
   "project.ciblorgasport.title": "CiblOrgaSport",
-  "project.ciblorgasport.desc": "Complete sports management platform with team coordination, championship scheduling, and real-time updates. Built with React and Node.js for seamless user experience.",
+  "project.ciblorgasport.desc": "Complete sports management platform with team coordination, championship scheduling, and real-time updates.",
   "project.restaurant.title": "Restaurant Management System",
   "project.restaurant.desc": "End-to-end solution for restaurant operations including reservations, menu management, and customer order handling. Designed for scalability and ease of use.",
   "project.microservices.title": "Microservices Messaging",

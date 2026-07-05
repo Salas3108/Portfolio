@@ -37,7 +37,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  height: 450px;
+  min-height: 450px;
   transition: all 0.3s ease;
 }
 
@@ -77,6 +77,7 @@
   padding: 15px;
   border-top: 1px solid var(--border-color);
   flex-wrap: wrap;
+  flex-shrink: 0;
 }
 
 .github-link {

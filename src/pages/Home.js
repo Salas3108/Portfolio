@@ -30,7 +30,7 @@ function Home() {
       titleKey: "project.ciblorgasport.title",
       descKey: "project.ciblorgasport.desc",
       image: "/projects/ciblorgasport.png",
-      tags: ["React", "Node.js", "MongoDB"],
+      tags: ["NextJs", "Spring Boot", "PostgreSQL", "Kafka", "Docker", "Microservices", "Graphana", "Prometheus"],
       links: [
         { labelKey: "project.link.frontend", url: "https://github.com/Salas3108/CiblOrgaSport_Front" },
         { labelKey: "project.link.backend", url: "https://github.com/Salas3108/CiblOrgaSport_Back" }
@@ -40,14 +40,14 @@ function Home() {
       titleKey: "project.restaurant.title",
       descKey: "project.restaurant.desc",
       image: "/projects/restaurant.png",
-      tags: ["Full Stack", "Database", "API"],
+      tags: ["Spring Boot", "PostgreSQL", "Angular", "Tailwind CSS"],
       links: [{ labelKey: "project.link.github", url: "https://github.com/ElsaLogier/projet-PAI.git" }]
     },
     {
       titleKey: "project.microservices.title",
       descKey: "project.microservices.desc",
       image: "/projects/microservices.png",
-      tags: ["Microservices", "API", "Node.js"],
+      tags: ["Microservices", "Java", "Kafka", "Docker", "WebSocket"],
       links: [{ labelKey: "project.link.github", url: "https://github.com/Salas3108/Projet_Alom" }]
     }
   ];
