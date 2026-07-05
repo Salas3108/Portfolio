@@ -68,6 +68,7 @@ const fr = {
   "home.cta.title": "Prêt à collaborer ?",
   "home.cta.subtitle": "Discutons de la façon dont je peux vous aider à construire quelque chose d'exceptionnel.",
   "home.cta.button": "Me contacter",
+  "home.cta.linkedin": "Me contacter sur LinkedIn",
 
   // Projects page
   "projects.title": "Mes Projets Personnels",

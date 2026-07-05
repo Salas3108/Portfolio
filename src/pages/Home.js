@@ -230,10 +230,16 @@ function Home() {
         <div className='cta-content'>
           <h2>{t('home.cta.title')}</h2>
           <p>{t('home.cta.subtitle')}</p>
-          <a href="mailto:salas.merzouk54@gmail.com" className='cta-button'>
-            {t('home.cta.button')}
-            <ArrowRightIcon />
-          </a>
+          <div className='cta-buttons'>
+            <a href="mailto:salas.merzouk54@gmail.com" className='cta-button'>
+              {t('home.cta.button')}
+              <ArrowRightIcon />
+            </a>
+            <a href="https://www.linkedin.com/in/salas-merzouk/" target="_blank" rel="noopener noreferrer" className='cta-button cta-button-outline'>
+              {t('home.cta.linkedin')}
+              <ArrowRightIcon />
+            </a>
+          </div>
         </div>
       </motion.section>
     </div>

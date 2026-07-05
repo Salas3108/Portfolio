@@ -68,6 +68,7 @@ const en = {
   "home.cta.title": "Ready to work together?",
   "home.cta.subtitle": "Let's discuss how I can help you build something extraordinary.",
   "home.cta.button": "Get In Touch",
+  "home.cta.linkedin": "Connect on LinkedIn",
 
   // Projects page
   "projects.title": "My Personal Projects",

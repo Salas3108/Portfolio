@@ -493,6 +493,14 @@
   text-align: center;
 }
 
+.cta-content .cta-buttons {
+  justify-content: center;
+}
+
+.cta-content .cta-buttons .cta-button {
+  flex: 1;
+}
+
 .cta-content h2 {
   font-size: 2.5rem;
   font-weight: 800;
@@ -511,15 +519,30 @@
 .cta-button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   padding: 16px 40px;
+  min-width: 240px;
   background: white;
   color: #3e497a;
   font-weight: 700;
   font-size: 1rem;
   border-radius: 8px;
   text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
   transition: all 0.3s ease;
+}
+
+.cta-button-outline {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.cta-button-outline:hover {
+  background: white;
+  color: #3e497a;
 }
 
 .cta-button:hover {
