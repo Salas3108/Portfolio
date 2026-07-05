@@ -1,142 +1,202 @@
 import React from 'react'
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import PageTitle from '../components/PageTitle';
+import PageTransition from '../components/PageTransition';
+import { useLanguage } from '../context/LanguageContext';
 import "../styles/home.css";
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay: i * 0.12, ease: 'easeOut' }
+  })
+};
+
+const stagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } }
+};
+
+
+
 function Home() {
+  const { t } = useLanguage();
   const projects = [
     {
-      title: "CiblOrgaSport",
+      titleKey: "project.ciblorgasport.title",
+      descKey: "project.ciblorgasport.desc",
       image: "/projects/ciblorgasport.png",
-      description: "Complete sports management platform with team coordination, championship scheduling, and real-time updates. Built with React and Node.js for seamless user experience.",
       tags: ["React", "Node.js", "MongoDB"],
       links: [
-        { label: "Frontend", url: "https://github.com/Salas3108/CiblOrgaSport_Front" },
-        { label: "Backend", url: "https://github.com/Salas3108/CiblOrgaSport_Back" }
+        { labelKey: "project.link.frontend", url: "https://github.com/Salas3108/CiblOrgaSport_Front" },
+        { labelKey: "project.link.backend", url: "https://github.com/Salas3108/CiblOrgaSport_Back" }
       ]
     },
     {
-      title: "Restaurant Management System",
+      titleKey: "project.restaurant.title",
+      descKey: "project.restaurant.desc",
       image: "/projects/restaurant.png",
-      description: "End-to-end solution for restaurant operations including reservations, menu management, and customer order handling. Designed for scalability and ease of use.",
       tags: ["Full Stack", "Database", "API"],
-      links: [{ label: "GitHub", url: "https://github.com/ElsaLogier/projet-PAI.git" }]
+      links: [{ labelKey: "project.link.github", url: "https://github.com/ElsaLogier/projet-PAI.git" }]
     },
     {
-      title: "Microservices Messaging",
+      titleKey: "project.microservices.title",
+      descKey: "project.microservices.desc",
       image: "/projects/microservices.png",
-      description: "Scalable real-time messaging platform leveraging microservices architecture. Enables reliable communication with message queuing and event-driven design.",
       tags: ["Microservices", "API", "Node.js"],
-      links: [{ label: "GitHub", url: "https://github.com/Salas3108/Projet_Alom" }]
+      links: [{ labelKey: "project.link.github", url: "https://github.com/Salas3108/Projet_Alom" }]
     }
   ];
 
   return (
+    <PageTransition>
     <div className='home'>
-      {/* Hero Section */}
+      <PageTitle title={t('page.home')} />
       <section className='hero'>
         <div className='hero-content'>
-          <div className='hero-text'>
+          <motion.div
+            className='hero-text'
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+          >
             <h1 className='hero-title'>
-              Full Stack Developer & Software Architect
+              {t('home.hero.title')}
             </h1>
             <p className='hero-subtitle'>
-              Turning complex problems into elegant, scalable solutions
+              {t('home.hero.subtitle')}
             </p>
             <p className='hero-description'>
-              I build robust applications and intelligent systems that drive business value. With expertise spanning full-stack development, microservices architecture, and emerging technologies, I deliver solutions that matter.
+              {t('home.hero.description')}
             </p>
             <div className='cta-buttons'>
               <a href="mailto:salas.merzouk54@gmail.com" className='btn btn-primary'>
-                Let&apos;s Talk
-                <ArrowRightIcon />
+                {t('home.hero.cta1')}
+                <ArrowRightIcon aria-hidden="true" />
               </a>
               <Link to="/projects" className='btn btn-secondary'>
-                View My Work
+                {t('home.hero.cta2')}
               </Link>
             </div>
-          </div>
-          <div className='hero-visual'>
-            <div className='gradient-blob blob-1'></div>
-            <div className='gradient-blob blob-2'></div>
-          </div>
+          </motion.div>
+          <motion.div
+            className='hero-visual'
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <div className='profile-container'>
+              <img
+                src="/assets/profile.jpg"
+                alt="Salas Merzouk"
+                className='profile-photo'
+                loading="lazy"
+              />
+              <div className='profile-ring'></div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className='about-section'>
+      <motion.section
+        className='about-section'
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-80px" }}
+        variants={fadeUp}
+      >
         <div className='about-header'>
-          <h2>About Me</h2>
+          <h2>{t('home.about.title')}</h2>
         </div>
         <div className='about-content'>
           <div className='about-text'>
-            <p>
-              I&apos;m a passionate software developer and architect with a strong foundation in full-stack development. Over the past few years, I&apos;ve had the opportunity to work on diverse projects ranging from enterprise applications at AXA France to innovative backend systems at CTIB, continuously pushing the boundaries of what&apos;s possible in software engineering.
-            </p>
-            <p>
-              My approach combines technical excellence with strategic thinking. I don&apos;t just write code—I design systems. Whether it&apos;s architecting microservices for scalability, implementing AI-driven solutions, or optimizing database performance, I focus on delivering solutions that solve real business problems and provide measurable value.
-            </p>
-            <p>
-              Currently pursuing a Master&apos;s degree in Computer Science at University of Lille, I&apos;m deeply invested in emerging technologies, including machine learning, cloud architecture, and DevOps practices. I&apos;m driven by curiosity and the opportunity to collaborate with teams that share a commitment to building exceptional software.
-            </p>
+            <p>{t('home.about.p1')}</p>
+            <p>{t('home.about.p2')}</p>
+            <p>{t('home.about.p3')}</p>
           </div>
         </div>
-      </section>
+      </motion.section>
 
-      {/* What I Do Section */}
-      <section className='services-section'>
+      <motion.section
+        className='services-section'
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-80px" }}
+        variants={fadeUp}
+      >
         <div className='section-header'>
-          <h2>What I Do</h2>
-          <p>Services and expertise</p>
+          <h2>{t('home.services.title')}</h2>
+          <p>{t('home.services.subtitle')}</p>
         </div>
-        <div className='services-grid'>
-          <div className='service-card'>
+        <motion.div
+          className='services-grid'
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <motion.div className='service-card' variants={fadeUp}>
             <div className='service-icon'>01</div>
-            <h3>Full Stack Development</h3>
-            <p>End-to-end web application development with modern frameworks. From responsive frontends to scalable backends, I create solutions that perform and delight.</p>
-          </div>
-          <div className='service-card'>
+            <h3>{t('home.services.fullstack')}</h3>
+            <p>{t('home.services.fullstack.desc')}</p>
+          </motion.div>
+          <motion.div className='service-card' variants={fadeUp}>
             <div className='service-icon'>02</div>
-            <h3>Microservices & Architecture</h3>
-            <p>Design and implementation of distributed systems. I build scalable architectures that handle growth, reduce complexity, and enable rapid deployment.</p>
-          </div>
-          <div className='service-card'>
+            <h3>{t('home.services.microservices')}</h3>
+            <p>{t('home.services.microservices.desc')}</p>
+          </motion.div>
+          <motion.div className='service-card' variants={fadeUp}>
             <div className='service-icon'>03</div>
-            <h3>AI & Machine Learning</h3>
-            <p>Intelligent systems and data-driven solutions. From recommendation engines to predictive analytics, I leverage ML to unlock insights and automate workflows.</p>
-          </div>
-          <div className='service-card'>
+            <h3>{t('home.services.ai')}</h3>
+            <p>{t('home.services.ai.desc')}</p>
+          </motion.div>
+          <motion.div className='service-card' variants={fadeUp}>
             <div className='service-icon'>04</div>
-            <h3>DevOps & Cloud</h3>
-            <p>Infrastructure automation and deployment pipelines. Docker, Kubernetes, and cloud platforms—I ensure applications run reliably at scale.</p>
-          </div>
-          <div className='service-card'>
+            <h3>{t('home.services.devops')}</h3>
+            <p>{t('home.services.devops.desc')}</p>
+          </motion.div>
+          <motion.div className='service-card' variants={fadeUp}>
             <div className='service-icon'>05</div>
-            <h3>Performance Optimization</h3>
-            <p>Database tuning, code optimization, and system performance. I identify bottlenecks and implement solutions that improve speed and reliability.</p>
-          </div>
-        </div>
-      </section>
+            <h3>{t('home.services.performance')}</h3>
+            <p>{t('home.services.performance.desc')}</p>
+          </motion.div>
+        </motion.div>
+      </motion.section>
 
-      {/* Recent Work Section */}
-      <section className='recent-work'>
+      <motion.section
+        className='recent-work'
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-80px" }}
+        variants={fadeUp}
+      >
         <div className='section-header'>
-          <h2>Recent Work</h2>
-          <p>A selection of my most impactful projects</p>
+          <h2>{t('home.recent.title')}</h2>
+          <p>{t('home.recent.subtitle')}</p>
         </div>
-        <div className='projects-grid'>
+        <motion.div
+          className='projects-grid'
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {projects.map((project, index) => (
-            <div key={index} className='project-card'>
+            <motion.div key={index} className='project-card' variants={fadeUp}>
               {project.image && (
                 <div className='project-image'>
-                  <img src={project.image} alt={project.title} />
+                  <img src={project.image} alt={t(project.titleKey)} loading="lazy" />
                 </div>
               )}
               <div className='card-header'>
-                <h3>{project.title}</h3>
+                <h3>{t(project.titleKey)}</h3>
                 <div className='card-number'>{String(index + 1).padStart(2, '0')}</div>
               </div>
-              <p className='card-description'>{project.description}</p>
+              <p className='card-description'>{t(project.descKey)}</p>
               <div className='card-tags'>
                 {project.tags.map((tag, i) => (
                   <span key={i} className='tag'>{tag}</span>
@@ -145,36 +205,40 @@ function Home() {
               <div className='card-links'>
                 {project.links.map((link, i) => (
                   <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className='link-btn'>
-                    {link.label}
-                    <ArrowRightIcon />
+                    {t(link.labelKey)}
+                    <ArrowRightIcon aria-hidden="true" />
                   </a>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         <div className='view-more'>
           <Link to="/projects" className='link-with-arrow'>
-            Explore all projects <ArrowRightIcon />
+            {t('home.recent.viewAll')} <ArrowRightIcon aria-hidden="true" />
           </Link>
         </div>
-      </section>
+      </motion.section>
 
-      {/* CTA Section */}
-      <section className='final-cta'>
+      <motion.section
+        className='final-cta'
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-80px" }}
+        variants={fadeUp}
+      >
         <div className='cta-content'>
-          <h2>Ready to work together?</h2>
-          <p>Let&apos;s discuss how I can help you build something extraordinary.</p>
+          <h2>{t('home.cta.title')}</h2>
+          <p>{t('home.cta.subtitle')}</p>
           <a href="mailto:salas.merzouk54@gmail.com" className='cta-button'>
-            Get In Touch
+            {t('home.cta.button')}
             <ArrowRightIcon />
           </a>
         </div>
-      </section>
+      </motion.section>
     </div>
+    </PageTransition>
   )
 }
 
 export default Home
-
-

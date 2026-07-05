@@ -81,6 +81,52 @@
   font-size: 18px;
 }
 
+.lang-toggle {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 10px;
+  margin-left: 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.lang-toggle:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: white;
+}
+
+.theme-toggle {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  margin-left: 8px;
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: white;
+}
+
+.theme-toggle svg {
+  font-size: 20px;
+}
+
 .toggleButton {
   width: auto;
   height: 100%;
@@ -145,6 +191,18 @@
 
 #open a::after {
   display: none;
+}
+
+#open .lang-toggle {
+  margin: 10px 0 0 0;
+  align-self: flex-start;
+  margin-left: 40px;
+}
+
+#open .theme-toggle {
+  margin: 10px 0 0 0;
+  align-self: flex-start;
+  margin-left: 10px;
 }
 
 /* ==================== RESPONSIVE DESIGN ==================== */
@@ -251,6 +309,14 @@
   .cv-link svg {
     font-size: 16px;
   }
+
+  #open .lang-toggle {
+    margin-left: 30px;
+  }
+
+  #open .theme-toggle {
+    margin-left: 10px;
+  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -279,6 +345,14 @@
 
   .cv-link svg {
     font-size: 14px;
+  }
+
+  #open .lang-toggle {
+    margin-left: 20px;
+  }
+
+  #open .theme-toggle {
+    margin-left: 10px;
   }
 }
 

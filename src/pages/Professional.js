@@ -2,39 +2,46 @@ import React from 'react'
 import { VerticalTimeline , VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import WorkIcon from '@mui/icons-material/Work';
+import PageTitle from '../components/PageTitle';
+import PageTransition from '../components/PageTransition';
+import { useLanguage } from '../context/LanguageContext';
 import '../styles/Experience.css';
 
 
 function Professional() {
+  const { t } = useLanguage();
   return (
+    <PageTransition>
     <div className='experience'>
-      <h2 className='experience-section-title'>Professional Experience</h2>
+      <PageTitle title={t('page.career')} />
+      <h2 className='experience-section-title'>{t('professional.title')}</h2>
       <VerticalTimeline lineColor='#3e497a'> 
         <VerticalTimelineElement className='vertical-timeline-element--work'
-        date='2024 - 2025'  
+        date={t('professional.date1')}  
         iconStyle={ {background : "#3e497a" , color : "#fff"}} 
-        icon = { <WorkIcon />}
+        icon = { <WorkIcon aria-hidden="true" />}
         > 
           <h3 className='vertical-timeline-element-title'>
-            AXA France
+            {t('professional.axa.name')}
           </h3>
-          <h4 className='vertical-timeline-element-subtitle'>Full Stack Developer Internship</h4>
-          <p>Developed and maintained web applications using modern tech stack. Collaborated with cross-functional teams to deliver high-quality software solutions. Gained hands-on experience in agile development and enterprise-level application architecture.</p>
+          <h4 className='vertical-timeline-element-subtitle'>{t('professional.axa.role')}</h4>
+          <p>{t('professional.axa.desc')}</p>
         </VerticalTimelineElement>
 
         <VerticalTimelineElement className='vertical-timeline-element--work'
-        date='2023 - 2024'  
+        date={t('professional.date2')}  
         iconStyle={ {background : "#3e497a" , color : "#fff"}} 
-        icon = { <WorkIcon />}
+        icon = { <WorkIcon aria-hidden="true" />}
         > 
           <h3 className='vertical-timeline-element-title'>
-            CTIB (Centre Technique de l&apos;Industrie Belge)
+            {t('professional.ctib.name')}
           </h3>
-          <h4 className='vertical-timeline-element-subtitle'>Software Development Internship</h4>
-          <p>Participated in the design and implementation of backend services. Worked with databases and API development. Contributed to technical documentation and knowledge transfer within the development team.</p>
+          <h4 className='vertical-timeline-element-subtitle'>{t('professional.ctib.role')}</h4>
+          <p>{t('professional.ctib.desc')}</p>
         </VerticalTimelineElement>
       </VerticalTimeline>
     </div>
+    </PageTransition>
   )
 }
 

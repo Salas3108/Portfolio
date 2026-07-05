@@ -1,17 +1,15 @@
-/* Home.css - Professional Developer Portfolio */
-
 .home {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #fff;
+  background-color: var(--bg-secondary);
 }
 
 /* ==================== HERO SECTION ==================== */
 .hero {
   width: 100%;
   padding: 120px 40px;
-  background: linear-gradient(135deg, #f5f7fa 0%, #f0f4f8 100%);
+  background: var(--hero-bg);
   position: relative;
   overflow: hidden;
 }
@@ -65,7 +63,7 @@
 
 .hero-subtitle {
   font-size: 1.3rem;
-  color: #666;
+  color: var(--text-muted);
   font-weight: 600;
   margin: 0 0 25px 0;
   letter-spacing: 0.3px;
@@ -74,7 +72,7 @@
 .hero-description {
   font-size: 1.05rem;
   line-height: 1.8;
-  color: #555;
+  color: var(--text-secondary);
   margin: 0 0 40px 0;
 }
 
@@ -124,42 +122,49 @@
 .hero-visual {
   position: relative;
   height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.gradient-blob {
-  position: absolute;
+.profile-container {
+  position: relative;
+  width: 260px;
+  height: 260px;
+}
+
+.profile-photo {
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
-  opacity: 0.7;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 20px 60px rgba(62, 73, 122, 0.2);
 }
 
-.blob-1 {
-  width: 300px;
-  height: 300px;
-  background: linear-gradient(135deg, rgba(62, 73, 122, 0.2), rgba(90, 107, 150, 0.1));
-  top: 0;
-  right: 0;
-  animation: float 6s ease-in-out infinite;
+.profile-ring {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
+  border-radius: 50%;
+  border: 3px solid #3e497a;
+  z-index: 1;
+  animation: ringPulse 3s ease-in-out infinite;
 }
 
-.blob-2 {
-  width: 250px;
-  height: 250px;
-  background: linear-gradient(135deg, rgba(62, 73, 122, 0.15), rgba(90, 107, 150, 0.05));
-  bottom: -50px;
-  right: 80px;
-  animation: float 8s ease-in-out infinite reverse;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-30px); }
+@keyframes ringPulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.05); opacity: 1; }
 }
 
 /* ==================== ABOUT SECTION ==================== */
 .about-section {
   width: 100%;
   padding: 100px 40px;
-  background-color: #fff;
+  background-color: var(--bg-secondary);
 }
 
 .about-header {
@@ -183,7 +188,7 @@
 .about-text p {
   font-size: 1.05rem;
   line-height: 1.9;
-  color: #555;
+  color: var(--text-secondary);
   margin: 0 0 25px 0;
 }
 
@@ -191,11 +196,64 @@
   margin-bottom: 0;
 }
 
+/* ==================== SKILLS SECTION ==================== */
+.skills-section {
+  width: 100%;
+  padding: 100px 40px;
+  background: var(--section-alt);
+}
+
+.skills-grid {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #3e497a;
+}
+
+.skill-level {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 10px;
+  background: var(--border-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3e497a, #5a6b96);
+  border-radius: 10px;
+}
+
 /* ==================== SERVICES SECTION ==================== */
 .services-section {
   width: 100%;
   padding: 100px 40px;
-  background-color: #f9f9fb;
+  background-color: var(--section-alt);
 }
 
 .section-header {
@@ -213,7 +271,7 @@
 
 .section-header p {
   font-size: 1.1rem;
-  color: #666;
+  color: var(--text-muted);
   margin: 0;
 }
 
@@ -226,10 +284,10 @@
 }
 
 .service-card {
-  background: white;
+  background: var(--bg-secondary);
   padding: 40px;
   border-radius: 12px;
-  border: 1px solid #e5e9f0;
+  border: 1px solid var(--border-color);
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -258,7 +316,7 @@
 
 .service-card p {
   font-size: 0.95rem;
-  color: #666;
+  color: var(--text-muted);
   line-height: 1.6;
   margin: 0;
 }
@@ -267,7 +325,7 @@
 .recent-work {
   width: 100%;
   padding: 100px 40px;
-  background-color: #fff;
+  background-color: var(--bg-secondary);
 }
 
 .projects-grid {
@@ -279,8 +337,8 @@
 }
 
 .project-card {
-  background: #f9f9fb;
-  border: 1px solid #e5e9f0;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 0;
   transition: all 0.3s ease;
@@ -333,54 +391,6 @@
   margin-bottom: 15px;
 }
 
-.card-description {
-  padding: 0 30px;
-  font-size: 0.95rem;
-  color: #666;
-  line-height: 1.6;
-  margin: 0 0 20px 0;
-  flex-grow: 1;
-}
-
-.card-tags {
-  padding: 0 30px;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin: 15px 0;
-}
-
-.card-links {
-  padding: 0 30px 30px 30px;
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: auto;
-}
-
-.project-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #3e497a, #5a6b96);
-}
-
-.project-card:hover {
-  border-color: #3e497a;
-  box-shadow: 0 20px 40px rgba(62, 73, 122, 0.12);
-  transform: translateY(-8px);
-}
-
-.card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 20px;
-}
-
 .card-header h3 {
   font-size: 1.5rem;
   color: #3e497a;
@@ -396,18 +406,20 @@
 }
 
 .card-description {
+  padding: 0 30px;
   font-size: 0.95rem;
-  color: #666;
+  color: var(--text-muted);
   line-height: 1.6;
   margin: 0 0 20px 0;
   flex-grow: 1;
 }
 
 .card-tags {
+  padding: 0 30px;
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
-  margin: 20px 0;
+  margin: 15px 0;
 }
 
 .tag {
@@ -421,10 +433,11 @@
 }
 
 .card-links {
+  padding: 0 30px 30px 30px;
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: auto;
 }
 
 .link-btn {
@@ -514,39 +527,31 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
+/* ==================== SCROLL TO TOP ==================== */
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #3e497a;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(62, 73, 122, 0.3);
+  z-index: 1000;
+}
+
+.scroll-to-top:hover {
+  background: #2f3a5a;
+}
+
 /* ==================== RESPONSIVE DESIGN ==================== */
 @media only screen and (max-width: 768px) {
-  .navbar {
-    height: 70px;
-    padding: 0 20px;
-  }
-
-  .navbar a {
-    padding: 0 15px;
-    font-size: 0.9rem;
-  }
-
-  .cv-link {
-    padding: 7px 12px !important;
-    font-size: 0.85rem;
-  }
-
-  .toggleButton {
-    display: flex;
-  }
-
-  #close .links {
-    display: none;
-  }
-
-  #open {
-    height: auto;
-  }
-
-  #open .links {
-    display: flex;
-  }
-
   .hero {
     padding: 80px 30px;
   }
@@ -561,12 +566,17 @@
   }
 
   .hero-visual {
+    height: auto;
+  }
+
+  .profile-container,
+  .profile-photo {
+    width: 200px;
     height: 200px;
   }
 
-  .blob-1, .blob-2 {
-    width: 200px;
-    height: 200px;
+  .skills-section {
+    padding: 80px 30px;
   }
 
   .about-section {
@@ -632,6 +642,16 @@
     font-size: 1.1rem;
   }
 
+  .profile-container,
+  .profile-photo {
+    width: 160px;
+    height: 160px;
+  }
+
+  .skills-section {
+    padding: 60px 20px;
+  }
+
   .cta-buttons {
     flex-direction: column;
     gap: 12px;
@@ -695,7 +715,3 @@
     padding: 12px 24px;
   }
 }
-
-
-
-

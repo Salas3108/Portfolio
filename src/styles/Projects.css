@@ -6,17 +6,17 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: linear-gradient(135deg, #f5f7fa 0%, #f0f4f8 100%);
+  background: var(--hero-bg);
   padding: 40px 0;
 }
 
 .projects .projectTitle {
   text-align: center;
   color: #3e497a;
-  font-size: 3.5rem; /* Adjust font size for smaller screens */
+  font-size: 3.5rem;
   font-weight: bold;
   margin-top: 5%;
-  margin-bottom: 5%; /* Adjust margin for smaller screens */
+  margin-bottom: 5%;
   letter-spacing: -0.5px;
 }
 
@@ -24,19 +24,18 @@
   width: 90%;
   max-width: 1200px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(35%, 1fr)); /* Use auto-fit for responsiveness */
-  gap: 30px; /* Adjust gap for smaller screens */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
 }
 
 .projectItem {
   border-radius: 12px;
-  background-color: white;
+  background-color: var(--bg-secondary);
   box-shadow: 0px 2px 8px rgba(62, 73, 122, 0.08);
   padding: 0;
   overflow: hidden;
   text-align: center;
-  /* Make project items the same height */
-  display: flex; /* Use flexbox to achieve equal height */
+  display: flex;
   flex-direction: column;
   height: 450px;
   transition: all 0.3s ease;
@@ -45,19 +44,17 @@
 .projectItem:hover {
   box-shadow: 0px 8px 20px rgba(62, 73, 122, 0.15);
   transform: translateY(-5px);
-  transition: 0.3s ease-in;
 }
 
 .bgImage {
   width: 100%;
   height: 220px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  flex-shrink: 0; /* Prevent image from shrinking */
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
 }
 
-.projectItem h1 {
+.projectItem h3 {
   font-size: 1.4rem;
   margin: 15px 15px 0 15px;
   color: #3e497a;
@@ -66,7 +63,7 @@
 
 .project-description {
   font-size: 0.9rem;
-  color: #666;
+  color: var(--text-muted);
   line-height: 1.5;
   flex-grow: 1;
   margin: 10px 15px;
@@ -78,7 +75,7 @@
   gap: 8px;
   justify-content: center;
   padding: 15px;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid var(--border-color);
   flex-wrap: wrap;
 }
 
@@ -104,7 +101,7 @@
 /* Media Queries for Responsiveness */
 @media only screen and (max-width: 800px) {
   .projectList {
-    grid-template-columns: 1fr; /* Single column for smaller screens */
+    grid-template-columns: 1fr;
   }
 
   .projectItem {
@@ -112,7 +109,7 @@
   }
 
   .projectTitle {
-    font-size: 1.8rem; /* Further adjustment for very small screens */
+    font-size: 1.8rem;
   }
 
   .projectItem {

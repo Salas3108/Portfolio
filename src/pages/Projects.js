@@ -1,6 +1,8 @@
-// Projects.js
 import React from 'react';
 import ProjectItem from '../components/ProjectItem';
+import PageTitle from '../components/PageTitle';
+import PageTransition from '../components/PageTransition';
+import { useLanguage } from '../context/LanguageContext';
 import Proj7 from "../assets/proj7.PNG";
 import Proj4 from "../assets/proj4.webp";
 import Proj5 from "../assets/proj5.webp";
@@ -12,64 +14,68 @@ import  "../styles/Projects.css";
 
 
 function Projects() {
+  const { t } = useLanguage();
   return (
+    <PageTransition>
     <div className='projects'>
-      <h1 className='projectTitle'>  My Personal Projects </h1>
+      <PageTitle title={t('page.projects')} />
+      <h1 className='projectTitle'>{t('projects.title')}</h1>
       <div className='projectList'>
         <ProjectItem 
-          name="Portfolio" 
+          name={t('projects.portfolio.name')} 
           image={Proj7} 
-          description="This portfolio is a reflection of my journey as a web developer, showcasing my passion for crafting interactive and user-friendly websites. I built it entirely with React, taking advantage of its component-based architecture and dynamic nature."
-          githubLinks={[{ url: "https://github.com/Salas3108", label: "GitHub Profile" }]}
+          description={t('projects.portfolio.desc')}
+          githubLinks={[{ url: "https://github.com/Salas3108", label: t('project.link.githubProfile') }]}
         />
 
         <ProjectItem 
-          name="CiblOrgaSport - Sports Management Platform" 
+          name={t('projects.ciblorgasport.name')} 
           image={CiblOrgaSport}
-          description="A comprehensive sports organization platform for managing teams, schedules, and championships. Built with a modern tech stack featuring separate frontend and backend repositories for scalability."
+          description={t('projects.ciblorgasport.desc')}
           githubLinks={[
-            { url: "https://github.com/Salas3108/CiblOrgaSport_Front", label: "Frontend" },
-            { url: "https://github.com/Salas3108/CiblOrgaSport_Back", label: "Backend" }
+            { url: "https://github.com/Salas3108/CiblOrgaSport_Front", label: t('project.link.frontend') },
+            { url: "https://github.com/Salas3108/CiblOrgaSport_Back", label: t('project.link.backend') }
           ]}
         />
 
         <ProjectItem 
-          name="Online Car Shop with AI Price Prediction" 
+          name={t('projects.carshop.name')} 
           image={Proj4}
-          description="An e-commerce platform for car sales featuring an AI model to predict car prices. Made using Mern Stack and FastAPI." 
-          githubLinks={[{ url: "https://github.com/Salas3108/SIAD.git", label: "GitHub" }]}
+          description={t('projects.carshop.desc')} 
+          githubLinks={[{ url: "https://github.com/Salas3108/SIAD.git", label: t('project.link.github') }]}
         />
         
         <ProjectItem 
-          name="Collaborative Filtering Recommender System" 
+          name={t('projects.collaborative.name')} 
           image={Proj5}
-          description="A recommender system that uses collaborative filtering to suggest items based on user similarity." 
-          githubLinks={[{ url: "https://colab.research.google.com/drive/1xrwNVgHymYM7kyxmtKWnaXsV3wQvM8Zm#scrollTo=8Enlro4tDRW8", label: "Colab" }]}
+          description={t('projects.collaborative.desc')} 
+          githubLinks={[{ url: "https://colab.research.google.com/drive/1xrwNVgHymYM7kyxmtKWnaXsV3wQvM8Zm#scrollTo=8Enlro4tDRW8", label: t('project.link.colab') }]}
         />
 
         <ProjectItem 
-          name="Hybrid Recommender System" 
+          name={t('projects.hybrid.name')} 
           image={Proj6}
-          description="A recommender system that combines content-based and collaborative filtering techniques for more accurate recommendations." 
-          githubLinks={[{ url: "https://github.com/Salas3108/Hybrid-Recommendation.git", label: "GitHub" }]}
+          description={t('projects.hybrid.desc')} 
+          githubLinks={[{ url: "https://github.com/Salas3108/Hybrid-Recommendation.git", label: t('project.link.github') }]}
         />
 
         <ProjectItem 
-          name="Restaurant Management System" 
+          name={t('projects.restaurant.name')} 
           image={GestionRestauration}
-          description="A complete restaurant management solution for handling reservations, menus, orders, and customer management. Designed for modern restaurant operations."
-          githubLinks={[{ url: "https://github.com/ElsaLogier/projet-PAI.git", label: "GitHub" }]}
+          description={t('projects.restaurant.desc')}
+          githubLinks={[{ url: "https://github.com/ElsaLogier/projet-PAI.git", label: t('project.link.github') }]}
         />
 
         <ProjectItem 
-          name="Microservices Messaging Platform" 
+          name={t('projects.messaging.name')} 
           image={MessagerieMS}
-          description="A scalable messaging system built with microservices architecture. Enables real-time communication with multiple channels and professional-grade reliability."
-          githubLinks={[{ url: "https://github.com/Salas3108/Projet_Alom", label: "GitHub" }]}
+          description={t('projects.messaging.desc')}
+          githubLinks={[{ url: "https://github.com/Salas3108/Projet_Alom", label: t('project.link.github') }]}
         />
 
       </div>
     </div>
+    </PageTransition>
   );
 }
 
