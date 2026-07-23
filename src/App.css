@@ -9,19 +9,29 @@
   --card-bg: #f9f9fb;
   --hero-bg: linear-gradient(135deg, #f5f7fa 0%, #f0f4f8 100%);
   --section-alt: #f9f9fb;
+  --accent: #3e497a;
+  --accent-hover: #2f3a5a;
+  --accent-light: #5a6b96;
+  --accent-dark: #21325e;
+  --accent-rgb: 62, 73, 122;
 }
 
 [data-theme="dark"] {
-  --bg-primary: #0f1117;
-  --bg-secondary: #1a1d27;
-  --bg-tertiary: #222533;
-  --text-primary: #e4e6f0;
-  --text-secondary: #b0b4c8;
-  --text-muted: #8b8fa3;
-  --border-color: #2e3142;
-  --card-bg: #1e2130;
-  --hero-bg: linear-gradient(135deg, #12141e 0%, #1a1d27 100%);
-  --section-alt: #1a1d27;
+  --bg-primary: #242738;
+  --bg-secondary: #2e3145;
+  --bg-tertiary: #383b50;
+  --text-primary: #eceef5;
+  --text-secondary: #c0c4d6;
+  --text-muted: #a0a4b8;
+  --border-color: #43465c;
+  --card-bg: #33364a;
+  --hero-bg: linear-gradient(135deg, #242738 0%, #2e3145 100%);
+  --section-alt: #2a2d40;
+  --accent: #7b8db8;
+  --accent-hover: #6a7ba8;
+  --accent-light: #97afd4;
+  --accent-dark: #4a5f8a;
+  --accent-rgb: 123, 141, 184;
 }
 
 .App {
@@ -61,7 +71,7 @@ body {
   left: 0;
   z-index: 10000;
   padding: 12px 24px;
-  background: #3e497a;
+  background: var(--accent);
   color: #fff;
   font-weight: 700;
   text-decoration: none;
@@ -74,7 +84,7 @@ body {
 }
 
 *:focus-visible {
-  outline: 3px solid #3e497a;
+  outline: 3px solid var(--accent);
   outline-offset: 2px;
   border-radius: 4px;
 }

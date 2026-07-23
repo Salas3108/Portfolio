@@ -21,7 +21,7 @@
   right: -10%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(62, 73, 122, 0.1), transparent);
+  background: radial-gradient(circle, rgba(var(--accent-rgb), 0.1), transparent);
   border-radius: 50%;
 }
 
@@ -32,7 +32,7 @@
   left: -5%;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(62, 73, 122, 0.08), transparent);
+  background: radial-gradient(circle, rgba(var(--accent-rgb), 0.08), transparent);
   border-radius: 50%;
 }
 
@@ -55,7 +55,7 @@
 .hero-title {
   font-size: 3.5rem;
   font-weight: 800;
-  color: #3e497a;
+  color: var(--accent);
   margin: 0 0 20px 0;
   line-height: 1.2;
   letter-spacing: -1px;
@@ -97,25 +97,25 @@
 }
 
 .btn-primary {
-  background-color: #3e497a;
+  background-color: var(--accent);
   color: white;
-  border: 2px solid #3e497a;
+  border: 2px solid var(--accent);
 }
 
 .btn-primary:hover {
-  background-color: #2f3a5a;
-  border-color: #2f3a5a;
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
   transform: translateX(5px);
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: #3e497a;
-  border: 2px solid #3e497a;
+  color: var(--accent);
+  border: 2px solid var(--accent);
 }
 
 .btn-secondary:hover {
-  background-color: #3e497a;
+  background-color: var(--accent);
   color: white;
 }
 
@@ -140,7 +140,7 @@
   object-fit: cover;
   position: relative;
   z-index: 2;
-  box-shadow: 0 20px 60px rgba(62, 73, 122, 0.2);
+  box-shadow: 0 20px 60px rgba(var(--accent-rgb), 0.2);
 }
 
 .profile-ring {
@@ -150,7 +150,7 @@
   width: calc(100% + 16px);
   height: calc(100% + 16px);
   border-radius: 50%;
-  border: 3px solid #3e497a;
+  border: 3px solid var(--accent);
   z-index: 1;
   animation: ringPulse 3s ease-in-out infinite;
 }
@@ -175,7 +175,7 @@
 .about-header h2 {
   font-size: 2.8rem;
   font-weight: 800;
-  color: #3e497a;
+  color: var(--accent);
   margin: 0;
   letter-spacing: -1px;
 }
@@ -226,7 +226,7 @@
 .skill-name {
   font-weight: 700;
   font-size: 1rem;
-  color: #3e497a;
+  color: var(--accent);
 }
 
 .skill-level {
@@ -245,7 +245,7 @@
 
 .skill-fill {
   height: 100%;
-  background: linear-gradient(90deg, #3e497a, #5a6b96);
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
   border-radius: 10px;
 }
 
@@ -264,7 +264,7 @@
 .section-header h2 {
   font-size: 2.8rem;
   font-weight: 800;
-  color: #3e497a;
+  color: var(--accent);
   margin: 0 0 15px 0;
   letter-spacing: -1px;
 }
@@ -294,22 +294,22 @@
 }
 
 .service-card:hover {
-  border-color: #3e497a;
-  box-shadow: 0 20px 40px rgba(62, 73, 122, 0.12);
+  border-color: var(--accent);
+  box-shadow: 0 20px 40px rgba(var(--accent-rgb), 0.12);
   transform: translateY(-8px);
 }
 
 .service-icon {
   font-size: 2.5rem;
   font-weight: 800;
-  color: rgba(62, 73, 122, 0.15);
+  color: rgba(var(--accent-rgb), 0.15);
   margin-bottom: 20px;
   line-height: 1;
 }
 
 .service-card h3 {
   font-size: 1.4rem;
-  color: #3e497a;
+  color: var(--accent);
   margin: 0 0 15px 0;
   font-weight: 700;
 }
@@ -373,13 +373,13 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #3e497a, #5a6b96);
+  background: linear-gradient(90deg, var(--accent), var(--accent-light));
   z-index: 10;
 }
 
 .project-card:hover {
-  border-color: #3e497a;
-  box-shadow: 0 20px 40px rgba(62, 73, 122, 0.12);
+  border-color: var(--accent);
+  box-shadow: 0 20px 40px rgba(var(--accent-rgb), 0.12);
   transform: translateY(-8px);
 }
 
@@ -393,7 +393,7 @@
 
 .card-header h3 {
   font-size: 1.5rem;
-  color: #3e497a;
+  color: var(--accent);
   margin: 0;
   font-weight: 700;
 }
@@ -401,7 +401,7 @@
 .card-number {
   font-size: 2.5rem;
   font-weight: 800;
-  color: rgba(62, 73, 122, 0.15);
+  color: rgba(var(--accent-rgb), 0.15);
   margin: -10px 0 0 0;
 }
 
@@ -424,8 +424,8 @@
 
 .tag {
   display: inline-block;
-  background: rgba(62, 73, 122, 0.1);
-  color: #3e497a;
+  background: rgba(var(--accent-rgb), 0.1);
+  color: var(--accent);
   padding: 6px 12px;
   border-radius: 20px;
   font-size: 0.8rem;
@@ -446,8 +446,8 @@
   gap: 6px;
   padding: 10px 16px;
   background: transparent;
-  color: #3e497a;
-  border: 2px solid #3e497a;
+  color: var(--accent);
+  border: 2px solid var(--accent);
   border-radius: 6px;
   text-decoration: none;
   font-weight: 600;
@@ -456,7 +456,7 @@
 }
 
 .link-btn:hover {
-  background: #3e497a;
+  background: var(--accent);
   color: white;
   transform: translateX(3px);
 }
@@ -470,7 +470,7 @@
   align-items: center;
   gap: 10px;
   font-size: 1.1rem;
-  color: #3e497a;
+  color: var(--accent);
   text-decoration: none;
   font-weight: 700;
   transition: all 0.3s ease;
@@ -484,7 +484,7 @@
 .final-cta {
   width: 100%;
   padding: 100px 40px;
-  background: linear-gradient(135deg, #3e497a 0%, #2f3a5a 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
 }
 
 .cta-content {
@@ -524,7 +524,7 @@
   padding: 16px 40px;
   min-width: 240px;
   background: white;
-  color: #3e497a;
+  color: var(--accent);
   font-weight: 700;
   font-size: 1rem;
   border-radius: 8px;
@@ -542,7 +542,7 @@
 
 .cta-button-outline:hover {
   background: white;
-  color: #3e497a;
+  color: var(--accent);
 }
 
 .cta-button:hover {
@@ -558,19 +558,19 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #3e497a;
+  background: var(--accent);
   color: white;
   border: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(62, 73, 122, 0.3);
+  box-shadow: 0 4px 20px rgba(var(--accent-rgb), 0.3);
   z-index: 1000;
 }
 
 .scroll-to-top:hover {
-  background: #2f3a5a;
+  background: var(--accent-hover);
 }
 
 /* ==================== RESPONSIVE DESIGN ==================== */
