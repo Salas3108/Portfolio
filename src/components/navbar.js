@@ -35,7 +35,7 @@ function Navbar() {
                 <Link to="/experience"> {t('nav.education')} </Link>
                 <Link to="/professional"> {t('nav.career')} </Link>
                 <Link to="/Projects"> {t('nav.projects')} </Link>
-                <a href="/cv.pdf" className="cv-link" download>
+                <a href="/Salas_Merzouk_CV.pdf" className="cv-link" download="Salas_Merzouk_CV.pdf">
                     <GetAppIcon aria-hidden="true" /> {t('nav.cv')}
                 </a>
                 <button className="lang-toggle" onClick={toggleLang} aria-label="Toggle language">
